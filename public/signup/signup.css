@@ -14,7 +14,7 @@ body {
     padding: 20px;
 }
 
-.contenedor-login {
+.contenedor-signup {
     background: white;
     border-radius: 20px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -49,7 +49,7 @@ body {
 }
 
 .grupo-formulario {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .etiqueta-formulario {
@@ -63,7 +63,7 @@ body {
 .input-formulario {
     width: 100%;
     padding: 14px 16px;
-    border: none;
+    border: 2px solid #f5f7fa;
     background: #f5f7fa;
     border-radius: 12px;
     font-size: 15px;
@@ -73,28 +73,30 @@ body {
 
 .input-formulario:focus {
     outline: none;
-    background: #eef1f5;
+    background: #fff;
+    border-color: #4338ca;
     box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.1);
+}
+
+.input-formulario.error {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+.input-formulario.success {
+    border-color: #10b981;
+    background: #f0fdf4;
 }
 
 .input-formulario::placeholder {
     color: #999;
 }
 
-.olvido-contrasena {
-    text-align: center;
-    margin: 16px 0 32px;
-}
-
-.olvido-contrasena a {
-    color: #4338ca;
+.error-message {
+    color: #ef4444;
     font-size: 13px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.olvido-contrasena a:hover {
-    color: #3730a3;
+    margin-top: 6px;
+    min-height: 18px;
 }
 
 .boton-enviar {
@@ -108,29 +110,39 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-top: 10px;
 }
 
-.link-signup {
+.boton-enviar:active {
+    transform: translateY(0);
+}
+
+.boton-enviar:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.link-login {
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
     color: #666;
 }
 
-.link-signup a {
+.link-login a {
     color: #4338ca;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.link-signup a:hover {
+.link-login a:hover {
     color: #3730a3;
-    text-decoration: underline;
 }
 
 @media (max-width: 480px) {
-    .contenedor-login {
+    .contenedor-signup {
         padding: 40px 30px;
     }
 }

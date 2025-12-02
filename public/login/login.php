@@ -96,6 +96,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
 
             <button type="submit" class="boton-enviar">Iniciar sesión</button>
+
+            <div class="link-signup">
+                ¿No tienes cuenta? <a href="../signup/signup.php">Regístrate aquí</a>
+            </div>
         </form>
     </div>
 </body>
