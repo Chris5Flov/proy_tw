@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f8fafd;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor-login {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.contenedor-logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.imagen-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.texto-logo {
+    font-size: 28px;
+    font-weight: 300;
+    color: #000;
+    letter-spacing: -0.5px;
+}
+
+.nombre-app {
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.grupo-formulario {
+    margin-bottom: 24px;
+}
+
+.etiqueta-formulario {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.input-formulario {
+    width: 100%;
+    padding: 14px 16px;
+    border: none;
+    background: #f5f7fa;
+    border-radius: 12px;
+    font-size: 15px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.input-formulario:focus {
+    outline: none;
+    background: #eef1f5;
+    box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.1);
+}
+
+.input-formulario::placeholder {
+    color: #999;
+}
+
+.olvido-contrasena {
+    text-align: center;
+    margin: 16px 0 32px;
+}
+
+.olvido-contrasena a {
+    color: #4338ca;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.olvido-contrasena a:hover {
+    color: #3730a3;
+}
+
+.boton-enviar {
+    width: 100%;
+    padding: 16px;
+    background: #4338ca;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 480px) {
+    .contenedor-login {
+        padding: 40px 30px;
+    }
+}
