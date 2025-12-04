@@ -133,3 +133,138 @@ a {
     padding: 25px;
 }
 
+/*sn*/
+.content-tabs-container .tab-content {
+    display: none;
+}
+
+.content-tabs-container .tab-content:target {
+    display: block;
+}
+
+/* descargas */
+
+.downloads-layout {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* sidebard*/
+.sidebar-filtro {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 25px;
+}
+
+.search-input {
+    border: none;
+    padding: 5px;
+    flex-grow: 1;
+    outline: none;
+}
+
+.search-icon {
+    color: #666;
+    margin-left: 5px;
+}
+
+.filter-section {
+    padding-top: 15px;
+}
+
+.filter-title {
+    font-size: 1em;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.file-type-list a {
+    display: block;
+    padding: 8px 10px;
+    margin: 4px 0;
+    color: #4a69ff;
+    transition: background-color 0.2s;
+    border-radius: 4px;
+}
+
+.file-type-list a:hover {
+    background-color: #f0f4ff;
+}
+
+.file-type-list a.active-filter {
+    font-weight: bold;
+    color: #0044cc;
+    background-color: #f0f4ff; 
+}
+
+/* archivos */
+.file-gallery {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 25px;
+    padding: 10px 0;
+}
+
+.file-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-height: 180px;
+    transition: transform 0.2s;
+}
+
+.file-item:hover {
+    transform: translateY(-3px);
+}
+
+.file-icon-big {
+    font-size: 4.5em;
+    color: #4a69ff; 
+    margin-bottom: 5px;
+}
+
+.file-name {
+    font-size: 0.95em;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+    word-break: break-all;
+}
+
+.file-info {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.download-icon {
+    font-size: 1.5em;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.download-icon:hover {
+    color: #000;
+}
