@@ -49,11 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'obtener') {
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'agregar') {
-    if (empty($input['nombre'])) {
-        echo json_encode(["status" => "error", "message" => "Falta el nombre"]);
-        exit;
-    }
     
+    
+    if (empty($input['nombre']) || empty($input['autor_o_empresa']) || empty($input['descripcion']) || empty($input['ruta_archivo'])) {
+        echo json_encode(["status" => "error", "message" => "Faltan datos obligatorios"]);
+        exit; 
+    }
+
     $stmt = $mysqli->prepare("INSERT INTO archivos (nombre, autor_o_empresa, descripcion, tipo, ruta_archivo, eliminado) VALUES (?, ?, ?, ?, ?, 0)");
     $stmt->bind_param("sssss", $input['nombre'], $input['autor_o_empresa'], $input['descripcion'], $input['tipo'], $input['ruta_archivo']);
     
@@ -67,13 +69,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'agregar') {
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'editar') {
+
+    // VALIDACIÓN DE BACKEND
+    if (empty($input['nombre']) || empty($input['autor_o_empresa']) || empty($input['descripcion']) || empty($input['ruta_archivo'])) {
+        echo json_encode(["status" => "error", "message" => "Error del Servidor: No puedes dejar campos vacíos."]);
+        exit;
+    }
+
     $stmt = $mysqli->prepare("UPDATE archivos SET nombre=?, autor_o_empresa=?, descripcion=?, tipo=?, ruta_archivo=? WHERE id=?");
     $stmt->bind_param("sssssi", $input['nombre'], $input['autor_o_empresa'], $input['descripcion'], $input['tipo'], $input['ruta_archivo'], $input['id']);
     
     if ($stmt->execute()) {
-        echo json_encode(["status" => "success", "message" => "Archivo actualizado"]);
+        echo json_encode(["status" => "success", "message" => "Archivo actualizado correctamente"]);
     } else {
-        echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
+        echo json_encode(["status" => "error", "message" => "Error SQL: " . $stmt->error]);
     }
     exit;
 }

@@ -60,15 +60,42 @@ $(document).ready(function() {
 
    
     $('#resource-form').submit(function(e) {
-        e.preventDefault();
-        const postData = {
-            nombre: $('#nombre').val(),
-            autor_o_empresa: $('#autor_o_empresa').val(),
-            descripcion: $('#descripcion').val(),
-            tipo: $('#tipo').val(),
-            ruta_archivo: $('#ruta_archivo').val(),
-            id: $('#resourceId').val()
-        };
+    e.preventDefault();
+    
+    
+    const postData = {
+        nombre: $('#nombre').val().trim(),
+        autor_o_empresa: $('#autor_o_empresa').val().trim(),
+        descripcion: $('#descripcion').val().trim(),
+        tipo: $('#tipo').val(),
+        ruta_archivo: $('#ruta_archivo').val().trim(),
+        id: $('#resourceId').val()
+    };
+
+    
+    if(postData.nombre === "") {
+        alert("El nombre es obligatorio");
+        $('#nombre').focus(); 
+        return; 
+    }
+
+    if(postData.autor_o_empresa === "") {
+        alert("El autor o empresa es obligatorio");
+        $('#autor_o_empresa').focus();
+        return;
+    }
+
+    if(postData.descripcion === "") {
+        alert("La descripción no puede estar vacía");
+        $('#descripcion').focus();
+        return;
+    }
+
+    if(postData.ruta_archivo === "") {
+        alert("Debes escribir la ruta del archivo");
+        $('#ruta_archivo').focus();
+        return;
+    }
 
       
         let accion = edit === false ? 'agregar' : 'editar';
