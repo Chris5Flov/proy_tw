@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if (!isset($_SESSION["id_rol"]) || $_SESSION["id_rol"] !== 1) {
@@ -67,7 +68,6 @@ if (!isset($_SESSION["id_rol"]) || $_SESSION["id_rol"] !== 1) {
                                 <option value="XML">XML</option>
                                 <option value="JSON">JSON</option>
                                 <option value="EXE">EXE</option>
-                                <option value="ZIP">ZIP</option>
                             </select>
                         </div>
 

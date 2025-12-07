@@ -1,0 +1,42 @@
+{
+  "nombre_playlist": "Focus Coding Session",
+  "creador": "TrackVault Labs",
+  "duracion_aproximada_min": 90,
+  "tags": ["focus", "lofi", "coding", "instrumental"],
+  "fecha_creacion": "2025-02-15",
+  "descripcion": "Playlist diseñada para mantener la concentración mientras programas.",
+  "canciones": [
+    {
+      "id": 1,
+      "titulo": "Midnight Syntax",
+      "artista": "Bytewave",
+      "duracion_seg": 210,
+      "genero": "Lo-fi",
+      "bpm": 72
+    },
+    {
+      "id": 2,
+      "titulo": "Refactor Dreams",
+      "artista": "Code&Chill",
+      "duracion_seg": 188,
+      "genero": "Chillhop",
+      "bpm": 78
+    },
+    {
+      "id": 3,
+      "titulo": "Infinite Loop",
+      "artista": "Debug Beats",
+      "duracion_seg": 245,
+      "genero": "Ambient",
+      "bpm": 65
+    },
+    {
+      "id": 4,
+      "titulo": "Clean Commit",
+      "artista": "Git Vibes",
+      "duracion_seg": 200,
+      "genero": "Lo-fi",
+      "bpm": 80
+    }
+  ]
+}

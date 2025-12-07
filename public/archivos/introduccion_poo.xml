@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recurso id="1">
+    <titulo>Ejemplo Básico de XML</titulo>
+    <autor>Eduardo Ballinas</autor>
+    <categoria>Programación Web</categoria>
+    <nivel>Principiante</nivel>
+    <descripcion>
+        Este es un ejemplo básico del uso de XML, 
+        en el se encuentra una estructura básica 
+        que permite identificar cómo se gestionan estos 
+        documentos.
+    </descripcion>
+    <capitulos>
+        <capitulo numero="1" titulo="Introducción"/>
+        <capitulo numero="2" titulo="Ejemplo básico"/>
+        <capitulo numero="3" titulo="Descripción"/>
+        <capitulo numero="4" titulo="Cierre"/>
+    </capitulos>
+</recurso>
