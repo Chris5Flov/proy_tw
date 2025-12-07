@@ -1,3 +1,4 @@
+
 <?php
 
 header('Content-Type: application/json');
@@ -5,7 +6,7 @@ header('Content-Type: application/json');
 $host = "localhost";
 $dbname = "track_vault";
 $username = "root";
-$password = "Isra2818"; 
+$password = ""; 
 
 $mysqli = new mysqli($host, $username, $password, $dbname);
 if ($mysqli->connect_errno) {

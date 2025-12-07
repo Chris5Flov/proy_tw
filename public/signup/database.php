@@ -4,7 +4,7 @@
 $host = "localhost";
 $dbname = "track_vault";
 $username = "root"; 
-$password = "Isra2818";   
+$password = "";   
 
 $mysqli = new mysqli($host, $username, $password, $dbname);
 
