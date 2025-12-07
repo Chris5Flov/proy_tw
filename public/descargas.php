@@ -1,7 +1,7 @@
 <?php
 $mysqli = require __DIR__ . "/login/database.php"; 
 
-require_once __DIR__ . "/../p12/ArchivosManager.php"; 
+require_once __DIR__ . "/archivosmanager.php"; 
 
 $filtro_activo = $_GET['tipo'] ?? 'Todos'; 
 
@@ -81,7 +81,9 @@ $archivos_disponibles = $manager->obtenerArchivos($filtro_activo);
                     <i class="fas <?= htmlspecialchars($icon_class) ?> file-icon-big"></i> 
                     <div class="file-name"><?= htmlspecialchars($archivo['nombre']) ?>.<?= htmlspecialchars($archivo['tipo']) ?></div>
                     <div class="file-info"><?= htmlspecialchars($archivo['descripcion']) ?></div>
-                    <i class="fas fa-download download-icon" title="Descargar <?= htmlspecialchars($archivo['nombre']) ?>"></i>
+                    <a href="descargar.php?id=<?= $archivo['id'] ?>">
+                        <i class="fas fa-download download-icon" title="Descargar <?= htmlspecialchars($archivo['nombre']) ?>"></i>
+                    </a>
                 </div>
                 
                 <?php endforeach; ?>

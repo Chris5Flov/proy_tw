@@ -1,6 +1,6 @@
 <?php
 class ArchivosManager {
-    private $db;
+    protected $db;
 
     public function __construct($databaseConnection) {
         $this->db = $databaseConnection;
@@ -13,7 +13,7 @@ class ArchivosManager {
      */
     public function obtenerArchivos($tipo_filtro = 'Todos') {
         
-        $sql = "SELECT nombre, tipo, descripcion, ruta_archivo FROM archivos WHERE eliminado = 0";
+        $sql = "SELECT id, nombre, tipo, descripcion, ruta_archivo FROM archivos WHERE eliminado = 0";
         
         if ($tipo_filtro !== 'Todos') {
             $sql .= " AND tipo = ?";
