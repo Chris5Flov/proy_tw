@@ -2,7 +2,54 @@ $(document).ready(function() {
     let edit = false;
     listarRecursos();
 
-    
+    cargarDashboard();
+
+    function cargarDashboard() {
+        $.ajax({
+            url: 'acciones_archivos.php?accion=dashboard',
+            type: 'GET',
+            success: function(data) {
+                $('#metric-total').text(data.total);
+
+                const tiposLabels = data.por_tipo.map(x => x.tipo);
+                const tiposValues = data.por_tipo.map(x => x.total);
+
+                new Chart(document.getElementById("chartTipos"), {
+                    type: "doughnut",
+                    data: {
+                        labels: tiposLabels,
+                        datasets: [{
+                            data: tiposValues,
+                            backgroundColor: ["#4a69ff", "#28a745", "#ffc107", "#dc3545"],
+                        }]
+                    },
+                });
+
+                const autoresLabels = data.top_autores.map(x => x.autor);
+                const autoresValues = data.top_autores.map(x => x.total);
+                const autoresColores = [
+                    "#4a69ff",
+                    "#E6171F",
+                    "#86F0DB",
+                    "#5EE32D",
+                    "#9C1DDB"
+                ];
+                new Chart(document.getElementById("chartAutores"), {
+                    type: "bar",
+                    data: {
+                        labels: autoresLabels,
+                        datasets: [{
+                            label: "Recursos",
+                            data: autoresValues,
+                            backgroundColor: autoresColores
+                        }]
+                    },
+
+                });
+            }
+        });
+    }   
+
     function listarRecursos() {
         $.ajax({
             url: 'acciones_archivos.php?accion=listar',

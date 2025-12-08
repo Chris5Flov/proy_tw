@@ -99,4 +99,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'eliminar') {
     }
     exit;
 }
+
+if ($_GET['accion'] === 'dashboard') {
+    $data = [];
+
+    $total = $mysqli->query("SELECT 
+                                COUNT(*) AS total 
+                                FROM archivos 
+                                WHERE eliminado = 0")->fetch_assoc();
+    $data["total"] = $total['total'];
+
+    $tipos = $mysqli->query("SELECT 
+                                tipo, 
+                                COUNT(*) as total 
+                                FROM archivos 
+                                WHERE eliminado = 0
+                                GROUP BY tipo");
+    $data["por_tipo"] = $tipos->fetch_all(MYSQLI_ASSOC);
+
+    $autores = $mysqli->query("SELECT 
+                                autor_o_empresa AS autor, 
+                                COUNT(*) AS total 
+                                FROM archivos 
+                                WHERE eliminado = 0 
+                                GROUP BY autor_o_empresa 
+                                ORDER BY total 
+                                DESC LIMIT 5");
+    $data["top_autores"] = $autores->fetch_all(MYSQLI_ASSOC);
+
+    echo json_encode($data);
+    exit;
+}
 ?>

@@ -189,3 +189,42 @@ textarea.form-control {
     color: #666;
     margin-left: 10px;
 }
+
+.dashboard-card {
+    width: 100%;
+    display: block !important;
+    clear: both;
+}
+
+.metric-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.metric-value {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #4a69ff;
+}
+
+.dashboard-charts {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.dashboard-charts .metric-card {
+    flex: 1;
+    min-width: 300px;
+}
+
+.dashboard-charts canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
