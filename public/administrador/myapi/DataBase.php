@@ -12,3 +12,4 @@ class DataBase {
         $this->conexion->set_charset("utf8mb4");
     }
 }
+?>

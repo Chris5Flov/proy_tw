@@ -31,3 +31,4 @@ class Crear extends DataBase {
         return ["status" => "error", "message" => $stmt->error];
     }
 }
+?>

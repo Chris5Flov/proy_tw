@@ -12,3 +12,4 @@ class Obtener extends DataBase {
         return $result->fetch_assoc();
     }
 }
+?>

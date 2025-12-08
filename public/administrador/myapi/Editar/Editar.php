@@ -33,3 +33,4 @@ class Editar extends DataBase {
         return ["status" => "error", "message" => $stmt->error];
     }
 }
+?>

@@ -11,3 +11,4 @@ class Listar extends DataBase {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 }
+?>
