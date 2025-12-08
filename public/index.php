@@ -23,7 +23,7 @@
         
         <div class="user-actions">
             <a href="perfil.php" title="Ver Perfil"><i class="fas fa-user-circle"></i></a>
-            <a href="../public/login/login.php" title="Cerrar Sesión"><i class="fas fa-sign-out-alt"></i></a> 
+            <a href="logout.php" title="Cerrar Sesión"><i class="fas fa-sign-out-alt"></i></a> 
             </div>
     </header>
 
@@ -89,6 +89,12 @@
         </div>
 
     </main>
-
+    <script>
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.href = "logout.php";
+            }
+        };
+    </script>
     </body>
 </html>

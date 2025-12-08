@@ -1,6 +1,11 @@
-
 <?php
 session_start();
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Expires: 0");
+
 if (!isset($_SESSION["id_rol"]) || $_SESSION["id_rol"] !== 1) {
     header("Location: ../login/login.php");
     exit;
@@ -24,7 +29,7 @@ if (!isset($_SESSION["id_rol"]) || $_SESSION["id_rol"] !== 1) {
         </div>
         <div class="user-menu">
             <span>Hola, Admin</span>
-            <a href="../login/login.php" class="btn btn-outline btn-sm">
+            <a href="../logout.php" class="btn btn-outline btn-sm">
                 <i class="fas fa-sign-out-alt"></i>
             </a>
         </div>
@@ -132,5 +137,13 @@ if (!isset($_SESSION["id_rol"]) || $_SESSION["id_rol"] !== 1) {
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="admin-app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.href = "../logout.php";
+            }
+        };
+    </script> 
+</body>
 </body>
 </html>

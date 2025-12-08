@@ -90,11 +90,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     required
                 >
             </div>
-
-            <div class="olvido-contrasena">
-                <a href="#">¿Olvidaste tu contraseña?</a>
-            </div>
-
             <button type="submit" class="boton-enviar">Iniciar sesión</button>
 
             <div class="link-signup">
