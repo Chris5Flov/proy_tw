@@ -2,14 +2,8 @@
 
 header('Content-Type: application/json');
 
-require_once "myapi/DataBase.php";
-require_once "myapi/Listar/Listar.php";
-require_once "myapi/Buscar/Buscar.php";
-require_once "myapi/Obtener/Obtener.php";
-require_once "myapi/Crear/Crear.php";
-require_once "myapi/Editar/Editar.php";
-require_once "myapi/Eliminar/Eliminar.php";
-require_once "myapi/Dashboard/Dashboard.php";
+require_once __DIR__ . '/../../vendor/autoload.php';
+
 
 use TrackVault\MyApi\Listar\Listar;
 use TrackVault\MyApi\Buscar\Buscar;
