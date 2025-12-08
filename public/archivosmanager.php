@@ -1,36 +1,39 @@
 <?php
-class ArchivosManager {
-    protected $db;
 
-    public function __construct($databaseConnection) {
-        $this->db = $databaseConnection;
+class ArchivosManager {
+
+    protected $db; 
+
+    public function __construct($mysqli) {
+        $this->db = $mysqli;
     }
 
-    /*
-     * Obtiene una lista de archivos, filtrando por tipo y excluyendo los eliminados.
-     * @param string $tipo_filtro ('Todos', 'XML', 'PDF', etc.)
-     * @return array La lista de archivos (array asociativo)
-     */
-    public function obtenerArchivos($tipo_filtro = 'Todos') {
-        
-        $sql = "SELECT id, nombre, tipo, descripcion, ruta_archivo FROM archivos WHERE eliminado = 0";
-        
-        if ($tipo_filtro !== 'Todos') {
-            $sql .= " AND tipo = ?";
-            
-            $stmt = $this->db->prepare($sql . " ORDER BY nombre ASC"); 
-            $stmt->bind_param("s", $tipo_filtro);
-        } else {
-            $stmt = $this->db->prepare($sql . " ORDER BY nombre ASC");
+    public function obtenerArchivos($tipo = "Todos", $search = "") {
+
+        $tipo   = $this->db->real_escape_string($tipo);
+        $search = $this->db->real_escape_string($search);
+
+        $sql = "SELECT id, nombre, tipo, descripcion 
+                FROM archivos 
+                WHERE eliminado = 0";
+
+        if ($tipo !== "Todos" && $tipo !== "All") {
+            $sql .= " AND tipo = '$tipo'";
         }
 
-        if ($stmt->execute()) {
-            $result = $stmt->get_result();
-            return $result->fetch_all(MYSQLI_ASSOC); 
-        } else {
-            error_log("Error al ejecutar consulta de archivos: " . $stmt->error);
-            return [];
+        if (!empty($search)) {
+            $sql .= " AND (
+                        id LIKE '%$search%' 
+                        OR nombre LIKE '%$search%' 
+                        OR descripcion LIKE '%$search%' 
+                        OR autor_o_empresa LIKE '%$search%'
+                    )";
         }
+
+        $sql .= " ORDER BY nombre ASC";
+
+        $result = $this->db->query($sql);
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 }
-?>

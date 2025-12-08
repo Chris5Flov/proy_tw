@@ -124,7 +124,7 @@ if (!isset($_SESSION["id_rol"]) || $_SESSION["id_rol"] !== 1) {
                     <h4>Autores Principales</h4>
                     <canvas id="chartAutores"></canvas>
                 </div>
-             </div>
+            </div>
         </div>
 
     </div>

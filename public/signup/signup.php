@@ -73,7 +73,6 @@
         </form>
     </div>
 
-    <!-- Es una libreria para validaciones -->
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
     
     <script src="signup-validation.js"></script>

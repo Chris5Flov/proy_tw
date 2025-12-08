@@ -1,5 +1,4 @@
 <?php
-// signup/database.php
 
 $host = "localhost";
 $dbname = "track_vault";

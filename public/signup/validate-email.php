@@ -1,7 +1,6 @@
 <?php
 header("Content-Type: application/json");
 
-// Verifica que se haya enviado el email
 if (!isset($_GET["email"]) || empty($_GET["email"])) {
     echo json_encode(["available" => false, "error" => "Email no proporcionado"]);
     exit;
