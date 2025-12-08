@@ -3,11 +3,35 @@
 
 header('Content-Type: application/json');
 
-$host = "localhost";
-$dbname = "track_vault";
-$username = "root";
-$password = ""; 
+require_once "myapi/Listar/Listar.php";
+require_once "myapi/Crear/Crear.php";
+require_once "myapi/Editar/Editar.php";
 
+use TrackVault\MyApi\Listar\Listar;
+use TrackVault\MyApi\Crear\Crear;
+use TrackVault\MyApi\Editar\Editar;
+
+$accion = $_GET['accion'] ?? '';
+$input = json_decode(file_get_contents("php://input"), true) ?? $_POST;
+switch ($accion) {
+    case "listar":
+        echo json_encode((new Listar())->ejecutar());
+        break;
+
+    case "agregar":
+        echo json_encode((new Crear())->ejecutar($input));
+        break;
+
+    case "editar":
+        echo json_encode((new Editar())->ejecutar($input));
+        break;
+
+    default:
+        echo json_encode(["status" => "error", "message" => "Acción no válida"]);
+        break;
+}
+
+{/*
 $mysqli = new mysqli($host, $username, $password, $dbname);
 if ($mysqli->connect_errno) {
     echo json_encode(["status" => "error", "message" => "Error de conexión: " . $mysqli->connect_error]);
@@ -129,5 +153,5 @@ if ($_GET['accion'] === 'dashboard') {
 
     echo json_encode($data);
     exit;
-}
+} */}
 ?>

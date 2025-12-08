@@ -24,7 +24,7 @@ if (!isset($_SESSION["id_rol"]) || $_SESSION["id_rol"] !== 1) {
         </div>
         <div class="user-menu">
             <span>Hola, Admin</span>
-            <a href="../login/logout.php" class="btn btn-outline btn-sm">
+            <a href="../login/login.php" class="btn btn-outline btn-sm">
                 <i class="fas fa-sign-out-alt"></i>
             </a>
         </div>
