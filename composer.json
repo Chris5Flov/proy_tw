@@ -1,0 +1,11 @@
+{
+    "name": "track_vault/app",
+    "description": "TrackVault proyecto",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+        "TrackVault\\MyApi\\": "public/administrador/myapi/"
+    }
+    },
+    "require": {}
+}
