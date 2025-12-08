@@ -3,19 +3,34 @@
 
 header('Content-Type: application/json');
 
+require_once "myapi/DataBase.php";
 require_once "myapi/Listar/Listar.php";
+require_once "myapi/Buscar/Buscar.php";
+require_once "myapi/Obtener/Obtener.php";
 require_once "myapi/Crear/Crear.php";
 require_once "myapi/Editar/Editar.php";
 
 use TrackVault\MyApi\Listar\Listar;
+use TrackVault\MyApi\Buscar\Buscar;
+use TrackVault\MyApi\Obtener\Obtener;
 use TrackVault\MyApi\Crear\Crear;
 use TrackVault\MyApi\Editar\Editar;
 
 $accion = $_GET['accion'] ?? '';
 $input = json_decode(file_get_contents("php://input"), true) ?? $_POST;
+
 switch ($accion) {
+
     case "listar":
         echo json_encode((new Listar())->ejecutar());
+        break;
+
+    case "buscar":
+        echo json_encode((new Buscar())->ejecutar($_GET['search']));
+        break;
+
+    case "obtener":
+        echo json_encode((new Obtener())->ejecutar($_POST['id']));
         break;
 
     case "agregar":
