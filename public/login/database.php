@@ -3,7 +3,7 @@
 $host = "localhost";
 $dbname = "track_vault";
 $username = "root";
-$password = "Tec&12Web";
+$password = "";
 
 $mysqli = new mysqli($host, $username, $password, $dbname);
 

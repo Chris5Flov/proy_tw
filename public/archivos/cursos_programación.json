@@ -1,0 +1,22 @@
+{
+  "cursos": [
+    {
+      "id": 1,
+      "nombre": "Herramientas Web",
+      "nivel": "Básico",
+      "duracionHoras": 24
+    },
+    {
+      "id": 2,
+      "nombre": "Tecnologías Web",
+      "nivel": "Intermedio",
+      "duracionHoras": 30
+    },
+    {
+      "id": 3,
+      "nombre": "Servicios Web",
+      "nivel": "Avanzado",
+      "duracionHoras": 30
+    }
+  ]
+}

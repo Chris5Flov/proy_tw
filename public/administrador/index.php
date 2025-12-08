@@ -78,7 +78,7 @@ if (!isset($_SESSION["id_rol"]) || $_SESSION["id_rol"] !== 1) {
 
                         <div class="form-group">
                             <label>Ruta del Archivo</label>
-                            <input type="text" id="ruta_archivo" class="form-control" placeholder="uploads/archivo.pdf">
+                            <input type="text" id="ruta_archivo" class="form-control" placeholder="archivos/archivo.pdf">
                         </div>
 
                         <button type="submit" class="btn btn-success btn-block">Agregar</button>

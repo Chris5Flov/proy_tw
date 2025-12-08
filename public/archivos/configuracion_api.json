@@ -1,0 +1,25 @@
+{
+  "apiName": "UserService",
+  "version": "1.0.0",
+  "endpoints": [
+    {
+      "route": "/users",
+      "method": "GET",
+      "description": "Obtiene la lista de usuarios"
+    },
+    {
+      "route": "/users",
+      "method": "POST",
+      "description": "Crea un nuevo usuario"
+    },
+    {
+      "route": "/users/{id}",
+      "method": "DELETE",
+      "description": "Elimina un usuario por ID"
+    }
+  ],
+  "authentication": {
+    "enabled": true,
+    "type": "Bearer Token"
+  }
+}
